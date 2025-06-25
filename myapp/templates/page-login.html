@@ -1,0 +1,329 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+.login-register_area {
+  padding: 100px 0;
+}
+
+@media (max-width: 991px) {
+  [class*=col-]:first-child form .login-form {
+    margin-bottom: 30px;
+  }
+}
+
+.login-form {
+  background-color: #ffffff;
+  padding: 30px;
+  max-width: 1300px;
+  -webkit-box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.login-form .login-title {
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+.login-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.login-form input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  line-height: 23px;
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+.login-form input[type=checkbox] {
+  width: auto;
+}
+
+.login-form .check-box {
+  float: left;
+  margin-right: 70px;
+}
+.login-form .check-box:last-child {
+  margin-right: 0;
+}
+.login-form .check-box input[type=checkbox] {
+  display: none;
+}
+.login-form .check-box input[type=checkbox] + label {
+  position: relative;
+  padding-left: 30px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.login-form .check-box input[type=checkbox] + label:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 2px solid #e5e5e5;
+  content: "";
+}
+.login-form .check-box input[type=checkbox] + label:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  content: "\f26b";
+  font-family: "Material-Design-Iconic-Font";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  opacity: 0;
+  width: 20px;
+  text-align: center;
+}
+.login-form .check-box input[type=checkbox]:checked + label:before {
+  border: 2px solid #e5e5e5;
+}
+.login-form .check-box input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .forgotton-password_info {
+    padding-top: 15px;
+  }
+}
+.forgotton-password_info a {
+  font-size: 14px;
+}
+.login_btn,
+.register_btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    text-align: center;
+}
+.login_btn,
+.register_btn:hover {
+    background-color: #0056b3;
+}
+
+
+h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+            <!-- #banner start -->
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">LOGIN</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/login">LOGIN</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+        <div class="login-register_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6">
+                        <form action="/login" method="post">
+                            {%csrf_token%}
+                            <div class="login-form">
+                                <h4 class="login-title">Login</h4>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label>Email Address*</label>
+                                        <input type="email" name="email2" placeholder="Email Address"
+                                               oninput="
+                                                   const email = this.value.trim();
+                                                   const isValidEmailFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+                                                   const containsGmail = email.includes('@gmail.com');
+
+                                                   if (!isValidEmailFormat || !containsGmail) {
+                                                       this.setCustomValidity('Please enter a valid Gmail address');
+                                                       this.reportValidity();
+                                                   } else {
+                                                       this.setCustomValidity('');
+                                                       this.reportValidity();
+                                                   }
+								        ">
+                                    </div>
+                                    <div class="col-md-12 col-12">
+                                        <label>Password</label>
+                                        <input type="password" name="password2" placeholder="Password"
+                                               oninput="
+                                                   const password = this.value.trim();
+                                                   const hasLowerCase = /[a-z]/.test(password);
+                                                   const hasDigit = /\d/.test(password);
+
+                                                   if (password.length < 5) {
+                                                       this.setCustomValidity('Password must be at least 5 characters long');
+                                                       this.reportValidity();
+                                                   } else if (!hasLowerCase) {
+                                                       this.setCustomValidity('Password must contain at least one lowercase letter');
+                                                       this.reportValidity();
+                                                   } else if (!hasDigit) {
+                                                       this.setCustomValidity('Password must contain at least one digit');
+                                                       this.reportValidity();
+                                                   } else {
+                                                       this.setCustomValidity('');
+                                                       this.reportValidity();
+                                                   }
+                                        ">
+                                    </div>
+
+                                    <div class="forgot-password-link">
+								<!-- Forgot Password Link -->
+                                        <a href="#" data-toggle="modal" data-target="#forgotPasswordModal">Forgot Password?</a>
+                                    </div>
+                                    <br><br>
+
+                                    <div class="col-md-12">
+                                        <button class="login_btn">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="modal fade" id="forgotPasswordModal" tabindex="-1" role="dialog" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/forgotpassword" method="post" class="forgot-password-form">
+                    {% csrf_token %}
+                    <div class="form-input">
+                        <label>Email</label>
+                        <input type="email" name="email2" placeholder="Enter your email" required />
+                    </div>
+                    <button type="submit" class="btn">Reset Password</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openForgotPasswordModal() {
+        document.getElementById('forgotPasswordModal').style.display = 'block';
+    }
+
+    function closeForgotPasswordModal() {
+        document.getElementById('forgotPasswordModal').style.display = 'none';
+    }
+
+    function closeForm() {
+        // Redirect to the index page
+        window.location.href = '/';
+    }
+
+    function validateSignUpForm() {
+        var email = document.forms["signUpForm"]["email2"].value;
+        var password = document.forms["signUpForm"]["password2"].value;
+        if (email == "" || password == "") {
+            alert("Please fill in all fields");
+            return false;
+        }
+
+        // Password validation
+        if (password.length < 5) {
+            alert("Password must be at least 5 characters long");
+            return false;
+        }
+
+        if (!/[a-z]/.test(password)) {
+            alert("Password must contain at least one lowercase letter");
+            return false;
+        }
+
+
+        if (!/\d/.test(password)) {
+            alert("Password must contain at least one digit");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+
+<script>
+function toggleIdProofField() {
+    const sellerCheckbox = document.getElementById('seller_checkbox');
+    const idProofContainer = document.getElementById('id_proof_container');
+
+    if (sellerCheckbox.checked) {
+        idProofContainer.style.display = 'block';
+        document.getElementById('id_proof').required = true;
+    } else {
+        idProofContainer.style.display = 'none';
+        document.getElementById('id_proof').required = false;
+    }
+}
+</script>
+<!-- //form -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{%endblock%}

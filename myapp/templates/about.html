@@ -1,0 +1,267 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+    h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">ABOUT</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a href="/login">ABOUT</a></li></span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+
+<img src="img/subscribe.jpg" alt="" class="img-fluid w-100" data-aos="fade-up" data-aos-duration="600">
+<div class="py-5">
+<div class="container pt-5">
+<div class="row g-4">
+<div class="col-12">
+<h1 class="fw-bold" data-aos="fade-right" data-aos-duration="500">Design Studio</h1>
+</div>
+<div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="600">
+<p class="mb-0">
+Fusce at nisi eget dolor rhoncus facilisis. Mauris ante nisl, consectetur et luctus et, porta ut dolor. Curabitur ultricies ultrices nulla. Morbi blandit nec est vitae dictum. Etiam vel consectetur diam. Maecenas
+vitae egestas dolor. Fusce tempor magna at tortor aliquet finibus. Sed eu nunc sit amet elit euismod faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis
+gravida eget neque vel vulputate.
+</p>
+</div>
+<div class="col-lg-6 col-12" data-aos="fade-left" data-aos-duration="700">
+<p class="mb-0">
+Cras eu elit congue, placerat dui ut, tincidunt nisl. Nulla leo elit, pharetra bibendum justo quis, cursus consectetur erat. Sed nec posuere turpis. Maecenas nec bibendum purus. Nulla fringilla, lorem iaculis
+iaculis fermentum, ligula nibh mollis ipsum, et scelerisque risus ante eu sem. Phasellus ac sagittis nisi. Suspendisse potenti. Nunc volutpat dui ipsum. Suspendisse potenti. In feugiat malesuada nisi quis
+laoreet.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card text-bg-dark rounded-0 border-0">
+<img src="static/img/video.jpg" class="card-img opacity-50" alt="video" data-aos="fade-up" data-aos-duration="600">
+<div class="card-img-overlay d-flex align-items-center justify-content-center">
+<!--<a href="#" class="link-light stretched-link" data-bs-toggle="modal" data-bs-target="#videoModal"><i class="ri-play-fill display-1"></i></a>-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center" data-aos="fade-up" data-aos-duration="600">
+<h1 class="fw-bold pb-1 display-4">Our Story</h1>
+<p>Crafting Timeless Pieces, One Story at a Time</p>
+</div>
+</div>
+</div>
+<div class="row align-items-center g-4 g-md-5">
+<div class="col-lg-6 col-12" data-aos="fade-right" data-aos-duration="600">
+<img src="static/img/our-story.jpg" alt="our-story" class="img-fluid">
+</div>
+<div class="col-lg-6 col-12">
+<div class="px-lg-5" data-aos="fade-left" data-aos-duration="700">
+<h1 class="fw-bold pb-2">Placerat Quam Lectus Curabitur Dictum Velit</h1>
+<p class="lead mb-5 text-muted">Etiam elementum euismod commodo. Proin eleifend eget quam ut efficitur. Mauris a accumsan mauris.</p>
+<a href="#" class="btn btn-secondary btn-lg" data-aos="fade-left" data-aos-duration="700">Contact Us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center" data-aos="fade-up" data-aos-duration="600">
+<h1 class="fw-bold pb-1 display-4">Meet our Team</h1>
+<p>We are passionate about design</p>
+</div>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="card bg-transparent border-0 rounded-0 text-center">
+<img src="static/img/team/member-1.jpg" class="card-img-top rounded-0" alt="team">
+<div class="card-body">
+<h5 class="card-title fw-bold">Kathryn Bradley</h5>
+<p class="card-text">Senior Designer</p>
+<div class="card-footer bg-transparent border-0 d-flex align-items-center justify-content-center gap-2">
+<a href="#" class="border p-2"><i class="ri-facebook-fill ri-lg"></i></a> <a href="#" class="border p-2"><i class="ri-twitter-fill ri-lg"></i></a>
+<a href="#" class="border p-2"><i class="ri-linkedin-box-fill ri-lg"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="700">
+<div class="card bg-transparent border-0 rounded-0 text-center">
+<img src="static/img/team/member-3.jpg" class="card-img-top rounded-0" alt="team">
+<div class="card-body">
+<h5 class="card-title fw-bold">Kelly Powell</h5>
+<p class="card-text">CEO</p>
+<div class="card-footer bg-transparent border-0 d-flex align-items-center justify-content-center gap-2">
+<a href="#" class="border p-2"><i class="ri-facebook-fill ri-lg"></i></a> <a href="#" class="border p-2"><i class="ri-twitter-fill ri-lg"></i></a>
+<a href="#" class="border p-2"><i class="ri-linkedin-box-fill ri-lg"></i></a>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="800">
+<div class="card bg-transparent border-0 rounded-0 text-center">
+<img src="static/img/team/member-4.jpg" class="card-img-top rounded-0" alt="team">
+<div class="card-body">
+<h5 class="card-title fw-bold">Harry Mendoza</h5>
+<p class="card-text">Architect</p>
+<div class="card-footer bg-transparent border-0 d-flex align-items-center justify-content-center gap-2">
+<a href="#" class="border p-2"><i class="ri-facebook-fill ri-lg"></i></a> <a href="#" class="border p-2"><i class="ri-twitter-fill ri-lg"></i></a>
+<a href="#" class="border p-2"><i class="ri-linkedin-box-fill ri-lg"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="bg-warning-subtle">
+<div class="row align-items-center">
+<div class="col-lg-5 col-12" data-aos="fade-up" data-aos-duration="600">
+<img src="static/img/new-collection.png" alt="new-collection" class="img-fluid d-block mx-auto">
+</div>
+<div class="col-lg-7 col-12">
+<div class="px-lg-5">
+<h6 class="text-secondary" data-aos="fade-up" data-aos-duration="600">Quality Craftsmanship</h6>
+<h1 class="fw-bold display-3" data-aos="fade-up" data-aos-duration="700">Explore Our Range of Premium Materials and Finishes</h1>
+<p class="lead mb-5" data-aos="fade-up" data-aos-duration="800">
+In consequat, quam id sodales hendrerit, eros mi leo, nec lacinia risus neque tristique augue. Proin tempus urna vel congue elementum.
+</p>
+<a href="#" class="btn btn-secondary btn-lg text-white" data-aos="fade-up" data-aos-duration="800">Explore Now</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container py-5">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center">
+<h1 class="fw-bold pb-1 display-4" data-aos="fade-up" data-aos-duration="500">Testimonials</h1>
+<p class="text-muted" data-aos="fade-up" data-aos-duration="600">Some feedback from our clients</p>
+</div>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="bg-white rounded-0 shadow-sm text-center p-5">
+<p class="text-muted pb-3">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae praesentium quasi fugiat nisi repellendus, impedit totam vitae eius! Totam eius nobis vel odit consequuntur eos eaque suscipit dolorum.
+</p>
+<div>
+<img src="static/img/team/member-3.jpg" alt="terminal-profile" class="img-fluid rounded-pill terminal-profile mb-3">
+<h6 class="fw-bold mb-0">Sara Freeman</h6>
+<small>UI/UX</small>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="700">
+<div class="bg-white rounded-0 shadow-sm text-center p-5">
+<p class="text-muted pb-3">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae praesentium quasi fugiat nisi repellendus, impedit totam vitae eius! Totam eius nobis vel odit consequuntur eos eaque suscipit dolorum.
+</p>
+<div>
+<img src="static/img/team/member-2.jpg" alt="terminal-profile" class="img-fluid rounded-pill terminal-profile mb-3">
+<h6 class="fw-bold mb-0">Ethan Lucas</h6>
+<small>UI/UX</small>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="800">
+<div class="bg-white rounded-0 shadow-sm text-center p-5">
+<p class="text-muted pb-3">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae praesentium quasi fugiat nisi repellendus, impedit totam vitae eius! Totam eius nobis vel odit consequuntur eos eaque suscipit dolorum.
+</p>
+<div>
+<img src="static/img/team/member-1.jpg" alt="terminal-profile" class="img-fluid rounded-pill terminal-profile mb-3">
+<h6 class="fw-bold mb-0">Kelly Carpenter</h6>
+<small>UI/UX</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5 bg-white">
+<div class="container">
+<div class="row row-cols-lg-5 align-items-center g-4">
+<div class="col" data-aos="fade-up" data-aos-duration="600">
+<img src="static/img/clients/client-1.svg" alt="client" class="img-fluid d-block mx-auto px-5">
+</div>
+<div class="col" data-aos="fade-up" data-aos-duration="700">
+<img src="static/img/clients/client-2.svg" alt="client" class="img-fluid d-block mx-auto px-5">
+</div>
+<div class="col" data-aos="fade-up" data-aos-duration="800">
+<img src="static/img/clients/client-3.svg" alt="client" class="img-fluid d-block mx-auto px-5">
+</div>
+<div class="col" data-aos="fade-up" data-aos-duration="900">
+<img src="static/img/clients/client-4.svg" alt="client" class="img-fluid d-block mx-auto px-5">
+</div>
+<div class="col" data-aos="fade-up" data-aos-duration="1000">
+<img src="static/img/clients/client-5.svg" alt="client" class="img-fluid d-block mx-auto px-5">
+</div>
+</div>
+</div>
+</div>
+
+{%endblock%}

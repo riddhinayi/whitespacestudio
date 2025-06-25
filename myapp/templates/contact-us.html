@@ -1,0 +1,190 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{% include 'messages.html' %}
+
+<style>
+/* Button styling */
+button.site-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button.site-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    form {
+        padding: 20px;
+    }
+    input[type="text"],
+    textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    button.site-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+h1.fw-Italic.display-2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">CONTACT</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/contact1">CONTACT</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<img src=" {% static 'img/contact-us.jpg' %} " alt="contact-us" class="img-fluid w-100" data-aos="fade-up" data-aos-duration="600">
+
+<div class="py-5">
+<div class="container py-4">
+<div class="row align-items-center justify-content-center g-4">
+<div class="col-lg-5 col-12 order-1 order-lg-0">
+<div class="pe-lg-5">
+<div class="d-flex align-items-start gap-4 mb-5" data-aos="fade-up" data-aos-duration="500">
+<i class="ri-map-pin-2-fill ri-2x text-secondary"></i>
+<div>
+<h5 class="fw-bold">Physical Address​</h5>
+<p class="mb-0">
+Gandhinagar,Gujrat<br>
+India
+</p>
+</div>
+</div>
+<div class="d-flex align-items-start gap-4 mb-5" data-aos="fade-up" data-aos-duration="600">
+<i class="ri-mail-fill ri-2x text-secondary"></i>
+<div>
+<h5 class="fw-bold">Email Address​</h5>
+<p class="mb-0">
+<a href="https://iamosahan.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="117469707c617d7451767c70787d3f727e7c">contact@gmail.com</a><br>
+<a href="https://iamosahan.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2b42454d446b4c464a424705484446">example@gmail.com</a>
+</p>
+</div>
+</div>
+<div class="d-flex align-items-start gap-4 mb-4" data-aos="fade-up" data-aos-duration="700">
+<i class="ri-phone-fill ri-2x text-secondary"></i>
+<div>
+<h5 class="fw-bold">Phone Numbers</h5>
+<p class="mb-0">
++91 9485008500<br>
+
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-5 col-12 order-0 order-lg-1">
+<div class="bg-white shadow p-5 send-message position-relative">
+<h2 class="fw-bold pb-4" data-aos="fade-left" data-aos-duration="400">Send us a message</h2>
+<form action="/contact1" method="post" class="row g-4">
+    {%csrf_token%}
+<div class="col-12" data-aos="fade-up" data-aos-duration="400">
+<input type="text" class="form-control rounded-0" name="name" placeholder="Name">
+</div>
+<div class="col-12" data-aos="fade-up" data-aos-duration="500">
+<input type="email" class="form-control rounded-0" name="email" placeholder="Email">
+</div>
+<div class="col-12" data-aos="fade-up" data-aos-duration="600">
+<input type="text" class="form-control rounded-0" name="subject" placeholder="Subject">
+</div>
+<div class="col-12" data-aos="fade-up" data-aos-duration="700"><textarea class="form-control rounded-0" rows="5" name="message" placeholder="Comment or message"></textarea></div>
+    <button type="submit" class="site-btn">Send a Message</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function (e) {
+    const name = document.querySelector('input[name="name"]').value.trim();
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const subject = document.querySelector('input[name="subject"]').value.trim();
+    const message = document.querySelector('textarea[name="message"]').value.trim();
+
+    // Simple regex for email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let errorMessages = [];
+
+    if (name === "") {
+        errorMessages.push("Fill the Contact form");
+    }
+
+    if (email === "") {
+
+    } else if (!emailRegex.test(email)) {
+
+    }
+
+    if (subject === "") {
+
+    }
+
+    if (message === "") {
+
+    }
+
+    if (errorMessages.length > 0) {
+        e.preventDefault(); // prevent form submission
+        alert(errorMessages.join("\n")); // show all errors in one alert
+    }
+});
+</script>
+
+
+{%endblock%}

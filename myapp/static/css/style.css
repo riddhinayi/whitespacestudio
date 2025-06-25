@@ -1,0 +1,20 @@
+@import 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap';
+body{font-family:manrope,sans-serif;letter-spacing:.05rem}
+.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:"dm serif display";font-weight:400!important;letter-spacing:.05rem}
+.fw-bold{font-weight:400!important}p{letter-spacing:.05rem}a{text-decoration:none;color:#1b1b1b}a:hover{color:#a8977b}
+.bg-warning-subtle{background-color:#efebe2!important}
+.furniture-nav.p-0.w-100.bg-black{background:#eeebe2!important}
+.furniture-nav a.nav-link{padding-top:29px!important;padding-bottom:29px!important}
+.h-4{height:1rem}
+.w-4{width:1rem}
+.btn{border-radius:0}
+.btn-secondary{background-color:#a8977b!important;border-color:#a8977b!important}
+.btn-secondary:hover{background-color:#7f715c!important;border-color:#7f715c!important}
+.text-bg-secondary{background-color:#a8977b!important}
+.text-secondary{color:#a8977b!important}
+.bg-secondary{background-color:#a8977b!important}
+.furniture-nav .navbar-nav .nav-link{text-transform:uppercase;padding:27px 0;font-size:14px;margin:0 12px;letter-spacing:.06rem}
+.furniture-nav .navbar-nav .nav-link:hover{color:#a8977b}
+.furniture-nav .navbar-nav .nav-link.active{color:#a8977b}
+.bg-homepage{background-image:url(../img/hero.png);background-position:center;background-repeat:no-repeat;background-size:cover}
+.qualities{margin-top:-5rem}.dropdown-cart-img{width:100px}.terminal-profile{width:70px}.send-message{margin-top:-7rem}@media(max-width:992px){.m-none{display:none}}

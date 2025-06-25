@@ -1,0 +1,55 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block main%}
+{% include 'messages.html' %}
+<style>
+ h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">Payment status</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page">Payment status</li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+<body>
+<h1 style="text-align: center; margin: 200px; font-size: 50; color: rgb(10, 10, 10)">Payment Successfull</h1>
+
+
+</body>
+
+{%endblock%}

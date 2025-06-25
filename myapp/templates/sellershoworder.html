@@ -1,0 +1,203 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Wishlist Area Container */
+.quicky-wishlist_area {
+    padding: 40px 0;
+    background: linear-gradient(135deg, #f9f9f9, #e2e2e2);
+}
+
+.quicky-wishlist_area .container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin: auto;
+    max-width: 1200px;
+}
+
+/* Table Styling */
+.table-content {
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-family: 'Arial', sans-serif;
+}
+
+.table thead th {
+    background: linear-gradient(135deg, #f5e7d3, #e9d8b9); /* Cream gradient */
+    color: #333; /* Darker text color for contrast */
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 2px solid #fff;
+}
+
+
+.table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f5f5f5;
+}
+
+.table tbody tr:hover {
+    background-color: #f0f8ff;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+.table img {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Column Specific Styling */
+.cart-product-name {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.quicky-product-thumbnail {
+    text-align: center;
+}
+
+.quicky-product-price {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.quicky-cart_btn {
+    text-align: center;
+}
+
+.quicky-cart_btn .amount {
+    display: block;
+    font-size: 1.1rem;
+    color: #e74c3c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 12px;
+    }
+
+    .table img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart-product-name {
+        font-size: 1rem;
+    }
+
+    .quicky-product-price, .quicky-cart_btn .amount {
+        font-size: 0.9rem;
+    }
+}
+
+</style>
+
+        <!-- Begin Quicky's Breadcrumb Area -->
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">ORDERS</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/sellershoworder">ALL ORDERS</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+        <!--Begin Quicky's Wishlist Area -->
+        <div class="quicky-wishlist_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="javascript:void(0)">
+                            <div class="table-content table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="cart-product-name">orderid</th>
+                                            <th class="quicky-product-thumbnail">product name</th>
+                                            <th class="quicky-product-price">Quantity</th>
+                                            <th class="quicky-product-price">price</th>
+                                            <th class="quicky-product-price">Total</th>
+<!--                                            <th class="quicky-product-stock-status">Stock Status</th>-->
+                                            <th class="quicky-cart_btn"></th>
+<!--                                            <th class="quicky-product_remove">remove</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for order in sellerorderdetails %}
+                                        <tr>
+                                            <td class="quicky-product-name">{{order.id}}</td>
+                                            <td class="quicky-product-price"><span class="amount">{{order.product.name}}</span></td>
+                                            <td class="quicky-product-price"><span class="amount">{{order.Quantity}}</span></td>
+                                            <td class="quicky-product-price"><span class="amount">{{order.product.price}}</span></td>
+                                            <td class="quicky-product-price"><span class="amount">{{order.Price}}</span></td>
+<!--                                            <td class="quicky-product-stock-status"><span class="in-stock">in stock</span></td>-->
+<!--                                            <td class="quicky-product_remove"><a href=" {% static 'javascript:void(0)' %} "><i class="zmdi zmdi-close"-->
+<!--                                                title="Remove"></i></a></td>-->
+                                        </tr>
+                                    {%endfor%}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quicky's Wishlist Area End Here -->
+
+
+        {%endblock%}

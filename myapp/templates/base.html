@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+
+<!-- Mirrored from iamosahan.com/wrapbootstrap-pillarix/furnitore/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 08:45:34 GMT -->
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href=" {% static 'img/pages/icon.png' %} " type="image/png">
+<title>WhiteSpace studio- Furniture & Interior Template</title>
+
+<link rel="stylesheet" href=" {% static 'vender/bootstrap/css/bootstrap.min.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'vender/icofont/icofont.min.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'vender/aos/dist/aos.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'vender/remixicon/remixicon.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+
+<link rel="stylesheet" href=" {% static 'css/common.css' %} ">
+
+</head>
+    <body class="bg-light">
+
+<div class="page-loading active">
+<div class="page-loading-inner">
+<div class="page-spinner"></div>
+<span>Loading...</span>
+</div>
+</div>
+<div class="bg-homepage vh-100 d-flex align-items-center flex-column">
+
+<nav class="navbar osahan-main-nav navbar-expand furniture-nav p-0 w-100">
+<div class="container py-0 py-lg-0">
+<div class="bg-white p-4">
+<div class="position-relative d-flex align-items-center gap-2 site-brand">
+<i class="ri-archive-drawer-line fs-2 lh-1"></i>
+<div class="lh-1">
+<h5 class="fw-bold m-0">WhiteSpace</h5>
+<small class="text-dark">Studio</small>
+</div>
+<a class="stretched-link" href="/ "></a>
+</div>
+</div>
+<div class="collapse navbar-collapse">
+<ul class="navbar-nav ms-lg-5 gap-4 m-none">
+<li class="nav-item">
+<a class="nav-link active" href= "/"><i></i> Home</a>
+</li>
+<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+{%if request.session.log_id%}
+{% if is_seller %}
+<li class="nav-item"><a class="nav-link" href="/addproduct">Add Product</a></li>
+<li class="nav-item"><a class="nav-link" href="/showproduct">My Product</a></li>
+<li class="nav-item"><a class="nav-link" href="/sellershoworder">Order</a></li>
+{%else%}
+<li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+<li class="nav-item"><a class="nav-link" href="/wishlist">Wishlists</a></li>
+<li class="nav-item"><a class="nav-link" href="/payment">Order</a></li>
+{%endif%}
+{%endif%}
+{%if request.session.log_id%}
+{% if is_seller %}
+{% if profile != None %}
+<li class="nav-item"><a class="nav-link" href="/showseller">seller Profile</a></li>
+{%else%}
+<li class="nav-item"><a class="nav-link" href="/addseller">Seller Profile</a></li>
+{%endif%}
+
+{%else%}
+{% if profile != None %}
+<li class="nav-item"><a class="nav-link" href="/showuser">Profile</a></li>
+{%else%}
+<li class="nav-item"><a class="nav-link" href="/adduser">User Profile</a></li>
+{%endif%}
+{%endif%}
+{%endif%}
+
+<li class="nav-item"><a class="nav-link" href="/contact1">Contact</a></li>
+
+{%if request.session.log_id%}
+<li class="nav-item"><a class="nav-link" href="/logout">LOGOUT</a></li>
+{%else%}
+<li class="nav-item"><a class="nav-link" href="/login">LOGIN</a></li>
+<li class="nav-item"><a class="nav-link" href="/signup">SIGNUP</a></li>
+{%endif%}
+</ul>
+<div class="d-flex align-items-center gap-4 ms-auto">
+<!--<a href="#" class="link-dark d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchbar"><i class="ri-search-line ri-lg"></i></a>-->
+<!--<a href="/ecommerce-cart" class="link-dark"><i class="ri-shopping-bag-2-line ri-lg"></i></a>-->
+<a href="#" class="link-dark d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar"><i class="ri-menu-3-line ri-lg"></i></a>
+</div>
+</div>
+</div>
+</nav>
+
+    {%block main%}
+
+    {%endblock%}
+
+
+    <footer class="footer bg-black text-white">
+<div class="footer-top border-bottom border-dark">
+<div class="container">
+<div class="row gx-md-4 gy-md-0 g-4">
+<div class="col-lg-3 col-12 border-end border-dark py-4" data-aos="fade-up" data-aos-duration="600">
+<div class="py-lg-5">
+<h6 class="fw-bold pb-3 text-uppercase">Contact us</h6>
+<div>
+<div class="d-flex align-items-start gap-4 mb-4">
+<i class="ri-map-pin-2-fill ri-2x text-secondary"></i>
+<div>
+<p class="mb-0 text-secondary-emphasis">9016 Goldfield StreetSouth Richmond Hill, New York 11419</p>
+</div>
+</div>
+<div class="d-flex align-items-start gap-4 mb-4">
+<i class="ri-mail-fill ri-2x text-secondary"></i>
+<div>
+<p class="mb-0 text-secondary-emphasis">
+<a href="https://iamosahan.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dbbea3bab6abb7be9bbcb6bab2b7f5b8b4b6">[email&#160;protected]</a><br>
+<a href="https://iamosahan.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c05020a032c0b010d0500420f0301">[email&#160;protected]</a>
+</p>
+</div>
+</div>
+<div class="d-flex align-items-start gap-4 mb-0">
+<i class="ri-phone-fill ri-2x text-secondary"></i>
+<div>
+<p class="mb-0 text-secondary-emphasis">
++1800-964-152<br>
++1800-964-152
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-6 border-end border-dark py-4 ps-lg-5" data-aos="fade-up" data-aos-duration="700">
+<div class="py-lg-5">
+<h6 class="fw-bold pb-3 text-uppercase">Account</h6>
+<ul class="list-unstyled d-grid gap-2 m-0">
+<li><a href="#" class="link-secondary">Products</a></li>
+<li><a href="#" class="link-secondary">My Account</a></li>
+<li><a href="#" class="link-secondary">My Wishlist</a></li>
+<li><a href="#" class="link-secondary">My cart</a></li>
+<li><a href="#" class="link-secondary">Sign In</a></li>
+<li><a href="#" class="link-secondary">Hot Offers</a></li>
+<li><a href="#" class="link-secondary">Checkout</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-6 border-end border-dark py-4 ps-lg-5" data-aos="fade-up" data-aos-duration="800">
+<div class="py-lg-5">
+<h6 class="fw-bold pb-3 text-uppercase">Useful Links</h6>
+<ul class="list-unstyled d-grid gap-2 m-0">
+<li><a href="#" class="link-secondary">New Products</a></li>
+<li><a href="#" class="link-secondary">Best Sellers</a></li>
+<li><a href="#" class="link-secondary">Manufactures</a></li>
+<li><a href="#" class="link-secondary">Supplies</a></li>
+<li><a href="#" class="link-secondary">Specials</a></li>
+<li><a href="#" class="link-secondary">Privacy Policy</a></li>
+<li><a href="#" class="link-secondary">Terms & Conditions</a></li>
+</ul>
+</div>
+</div>
+<div class="col-lg-3 col-12 py-4 ps-lg-5" data-aos="fade-up" data-aos-duration="900">
+<div class="py-lg-5">
+<h6 class="fw-bold pb-3 text-uppercase">Email Newsletter</h6>
+<p class="text-secondary-emphasis">Subscribe to our newsletter and get 10% off your first purchase</p>
+<div class="input-group mb-3">
+<input type="text" class="form-control rounded-0" placeholder="your email address" aria-label="your email address" aria-describedby="button-addon2">
+<button class="btn btn-secondary" type="button" id="button-addon2"><i class="ri-mail-fill"></i></button>
+</div>
+<div class="d-flex align-items-center gap-2 text-secondary-emphasis">
+<i class="ri-paypal-line fs-5"></i> <i class="ri-visa-line fs-1"></i> <i class="ri-mastercard-line fs-5"></i> <i class="ri-bit-coin-line fs-5"></i> <i class="ri-bank-card-line fs-5"></i>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-end py-5 bg-black">
+<div class="container">
+<div class="row align-items-center justify-content-between">
+<div class="col-auto">
+<p class="text-center m-0 text-white-50">Copyright © <a href="#" class="text-white">WhiteSpace Studio</a> 2025</p>
+</div>
+<div class="col-auto">
+<div class="d-flex aling-items-center gap-4">
+<a class="text-white" href="#"><i class="ri-facebook-circle-fill ri-lg"></i></a> <a class="text-white" href="#"><i class="ri-twitter-fill ri-lg"></i></a>
+<a class="text-white" href="#"><i class="ri-instagram-fill ri-lg"></i></a> <a class="text-white" href="#"><i class="ri-pinterest-fill ri-lg"></i></a>
+<a class="text-white" href="#"><i class="ri-youtube-fill ri-lg"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<div class="modal fade bg-dark bg-opacity-50" id="searchbar" tabindex="-1" aria-labelledby="searchbarLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+<div class="modal-body">
+<div class="input-group border rounded">
+<input type="search" class="form-control bg-transparent border-0 rounded-0" placeholder="Search" aria-label="Search" aria-describedby="search" list="datalistOptions">
+<datalist id="datalistOptions">
+<option value="Trends"> </option>
+<option value="Nature"> </option>
+<option value="Travel"> </option>
+<option value="Art & Design"> </option>
+<option value="People"> </option>
+</datalist>
+<a href="#" class="input-group-text bg-transparent border-0 rounded-0" id="search"><i class="ri-search-line"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="offcanvas offcanvas-end bg-secondary" tabindex="-1" id="sidebar">
+<div class="offcanvas-header d-flex justify-content-between">
+<div class="position-relative d-flex align-items-center gap-2 site-brand">
+<i class="ri-archive-drawer-line fs-2 lh-1"></i>
+<div class="lh-1">
+<h5 class="fw-bold m-0">Furniture</h5>
+<small class="text-dark">Template</small>
+</div>
+<a class="stretched-link" href=" {% static 'index.html' %} "></a>
+</div>
+<a href="#" class="text-white" data-bs-dismiss="offcanvas" aria-label="Close"><i class="ri-close-line ri-lg"></i></a>
+</div>
+<div class="offcanvas-body">
+<div class="sidebar-nav">
+<ul class="navbar-nav justify-content-end flex-grow-1">
+<li class="nav-item">
+<a class="nav-link active" href=" {% static 'index.html' %} "><i class="ri-apps-2-line"></i> Home</a>
+</li>
+<li class="nav-item"><a class="nav-link" href=" {% static 'about.html' %} ">About</a></li>
+<li class="nav-item"><a class="nav-link" href=" {% static 'products.html' %} ">Products</a></li>
+<li class="nav-item dropdown osahan-mega-menu position-static">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Elements </a>
+<ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
+<li>
+<div class="dropdown-mega-content container">
+<div class="row g-0">
+<div class="col-lg-3 p-5 border-end border-start border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Elements 1</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-accordions-toggles.html' %} ">Accordions &amp; Toggles</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-tabs.html' %} ">Tabs</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-icons.html' %} ">Icons</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-pagination.html' %} ">Pagination</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-cards.html' %} ">Cards</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-carousels.html' %} ">Carousels</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-modals.html' %} ">Modals</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-placeholders.html' %} ">Placeholders</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-medias.html' %} ">Medias</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-maps.html' %} ">Maps</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-forms-basic.html' %} ">Forms</a></li>
+</ul>
+</div>
+<div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Elements 2</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-buttons.html' %} ">Buttons</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-badges.html' %} ">Badges</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-lists.html' %} ">Lists</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-offcanvas.html' %} ">Offcanvas</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-image-frames.html' %} ">Image Frames</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-testimonials.html' %} ">Testimonials</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-blockquotes.html' %} ">Blockquotes</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-borders.html' %} ">Borders</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-process.html' %} ">Process</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-countdowns.html' %} ">Countdowns</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-spinners.html' %} ">Spinners</a></li>
+</ul>
+</div>
+<div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Elements 3</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-call-to-action.html' %} ">Call to Action</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-pricing-tables.html' %} ">Pricing Tables</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-tables.html' %} ">Tables</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-progress-bars.html' %} ">Progress Bars</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-colors.html' %} ">Colors</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-dropdowns.html' %} ">Dropdowns</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-tooltips-popovers.html' %} ">Tooltips &amp; Popovers</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-sticky-elements.html' %} ">Sticky Elements</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-typography.html' %} ">Typography</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'elements/elements-alerts.html' %} ">Alerts</a></li>
+</ul>
+</div>
+<div class="col-lg-3 dropdown-mega-sub-content-block d-none d-lg-block bg-light p-5 osahan-dropdown-box border-end border-opacity-10 border-dark">
+<div class="position-relative d-flex align-items-center gap-2 site-brand osahan-header-logo">
+<i class="ri-archive-drawer-line fs-2 lh-1 text-black"></i>
+<div class="lh-1">
+<h5 class="fw-bold m-0 text-black">Furniture</h5>
+<small class="text-dark-50">Template</small>
+</div>
+<a class="stretched-link" href=" {% static 'index.html' %} "></a>
+</div>
+<h5 class="text-dark mt-5 mb-2"> Multi-Purpose</h5>
+<h1 class="text-primary fw-bold">And Powerful Bootstrap based </h1>
+<p class="lead mb-5">
+Template with 180+ Valid Multi-Page & One-Page Layouts
+</p>
+<a class="btn btn-primary px-5 py-3" href="#">GET STARTED</a>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="nav-item dropdown osahan-mega-menu position-static">
+<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Extra Pages </a>
+<ul class="dropdown-menu w-100 m-0 border-opacity-10 border-dark border-top border-bottom p-0 start-0 end-0 rounded-0 shadow">
+<li>
+<div class="dropdown-mega-content container">
+<div class="row g-0">
+<div class="col-lg-3 p-5 border-end border-start border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Portfolio</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/portfolio-full-width.html' %} ">Portfolio Full Width</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/portfolio-boxed.html' %} ">Portfolio Boxed</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/portfolio-classic.html' %} ">Portfolio Classic</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/portfolio-masonry.html' %} ">Portfolio Masonry</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/single-project.html' %} ">Single Project</a></li>
+</ul>
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold mt-4">Additional Pages</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-coming-soon.html' %} ">Coming Soon</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-coming-soon-simple.html' %} ">Coming Soon: Simple</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-error-404.html' %} ">Maintenance</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-error-404.html' %} ">Error 404</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-terms.html' %} ">Terms &amp; Conditions</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-privacy.html' %} ">Privacy &amp; Policy</a></li>
+</ul>
+</div>
+<div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Blog</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-grid.html' %} ">Blog Grid</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-grid-classic.html' %} ">Blog Grid Classic</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-grid-sidebar.html' %} ">Blog Grid Sidebar</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-list.html' %} ">Blog List</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-list-sidebar.html' %} ">Blog List Right Sidebar</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-left-sidebar.html' %} ">Blog List Left Sidebar</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-full-width.html' %} ">Blog Full Width</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-post.html' %} ">Blog Post</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/blog-author-profile.html' %} ">Author Profile</a></li>
+</ul>
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold mt-4">Help</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-help-center.html' %} ">Help Center</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-help-center-categories.html' %} ">Help Center: Categories</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-help-center-article.html' %} ">Help Center: Article</a></li>
+</ul>
+</div>
+<div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">Shop</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-product-grid.html' %} ">Product Grid</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-product-list.html' %} ">Product List</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-product-full-three-coulmn.html' %} ">Product Three Coulmns</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-product-full-four-coulmn.html' %} ">Product Four Coulmns</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-product-detail.html' %} ">Product Detail</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-cart.html' %} ">Shop Cart</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/shop-checkout.html' %} ">Shop Checkout</a></li>
+</ul>
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold mt-4">Company</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-hire-us.html' %} ">Hire Us</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-careers.html' %} ">Careers</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-careers-role-overview.html' %} ">Careers: Role Overview</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-careers-apply.html' %} ">Careers: Apply</a></li>
+</ul>
+</div>
+<div class="col-lg-3 p-5 border-end border-opacity-10 border-dark">
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold">My Account</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-login.html' %} ">Log In v.1</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-login-2.html' %} ">Log In v.2</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-signup.html' %} ">Sign Up v.1</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-signup-2.html' %} ">Sign Up v.2</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/page-reset-password.html' %} ">Forgot Password</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/account-orders.html' %} ">Orders</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/account-settings.html' %} ">Settings</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/account-address.html' %} ">Address</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/my-wallet.html' %} ">My Wallet</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/account-notification.html' %} ">Notification</a></li>
+</ul>
+<h6 class="dropdown-mega-sub-title mb-3 fw-bold mt-4">FAQ</h6>
+<ul class="dropdown-mega-sub-nav list-unstyled">
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/faq.html' %} ">FAQ v.1</a></li>
+<li><a class="dropdown-item px-0 py-1 bg-transparent" href=" {% static 'pages/faq-2.html' %} ">FAQ v.2</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="nav-item"><a class="nav-link" href=" {% static 'contact-us.html' %} ">Contact</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered modal-xl">
+<div class="modal-content bg-transparent border-0 rounded-0">
+<div class="modal-header d-flex justify-content-end border-0 py-0">
+<a href="#" class="link-light" data-bs-dismiss="modal" aria-label="Close"><i class="ri-close-fill ri-2x"></i></a>
+</div>
+<div class="modal-body px-5">
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/gu-HhgJ7vfM?si=egwKhEDMVeXg3IuJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script data-cfasync="false" src=" {% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %} "></script><script src="vender/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src=" {% static 'vender/jquery/jquery-3.6.4.min.js' %} "></script>
+
+<script src=" {% static 'vender/aos/dist/aos.js' %} "></script>
+
+<script src=" {% static 'js/script.js' %} "></script>
+     </body>
+
+<!-- Mirrored from iamosahan.com/wrapbootstrap-pillarix/furnitore/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 16 Sep 2024 08:46:06 GMT -->
+</html>

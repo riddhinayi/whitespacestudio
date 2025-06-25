@@ -1,0 +1,173 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+<style>
+ h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+    /* Form Container */
+form {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Input Labels */
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select,
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
+
+/* Form Textarea */
+form textarea {
+    resize: vertical;
+}
+
+/* File Input */
+form input[type="file"] {
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+}
+
+/* Submit Button */
+form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover */
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* General Form Styling */
+form .form-input {
+    margin-bottom: 15px;
+}
+
+form .form-input:last-child {
+    margin-bottom: 0;
+}
+
+form .form-input label {
+    font-size: 14px;
+    color: #555;
+}
+
+form .form-input input,
+form .form-input select,
+form .form-input textarea {
+    font-size: 14px;
+    color: #333;
+}
+</style>
+
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">PRODUCTS</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/addproduct">ADD PRODUCT</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+        <!--Begin Quicky's Wishlist Area -->
+        <form method="post" enctype="multipart/form-data" action="/addproduct">
+            {% csrf_token %}
+            <div class="form-input">
+                <label for="category">Category:</label>
+                <select name="category" id="category">
+                    {% for category in categories %}
+                        <option value="{{ category.id }}">{{ category.cateName }}</option>
+                    {% endfor %}
+                </select><br>
+            </div>
+
+            <div class="form-input">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required><br>
+            </div>
+
+            <div class="form-input">
+                <label for="desc">Description:</label>
+                <textarea name="desc" id="desc" rows="4" required></textarea><br>
+            </div>
+
+            <div class="form-input">
+                <label for="price">Price:</label>
+                <input type="number" name="price" id="price" required><br>
+            </div>
+
+           <div class="form-input">
+               <label>Service Image:</label>
+               <input type="file" name="image" class="form-control-file" accept="image/*" required>
+           </div>
+
+
+            <button type="submit" class="btn btn-secondary">Submit</button>
+        </form>
+
+        {%endblock%}

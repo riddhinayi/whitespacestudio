@@ -1,0 +1,278 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{% include 'messages.html' %}
+
+<div class="py-5 m-auto">
+<div class="container py-5 my-5">
+<div class="row align-items-center g-4">
+<div class="col-lg-6 col-12">
+<h6 class="text-secondary" data-aos="fade-up" data-aos-duration="500">NEW COLLECTION</h6>
+<h1 class="fw-bold text-black display-2" data-aos="fade-up" data-aos-duration="600">Beautifully Crafted Modern Furniture</h1>
+<p class="text-dark mb-4 lead" data-aos="fade-up" data-aos-duration="700">In consequat, quam id sodales hendrerit, eros mi leo, nec lacinia risus neque tristique augue. Proin tempus urna vel congue elementum.</p>
+<!--<a href="#" class="btn btn-outline-dark border-2 px-4 btn-lg" data-aos="fade-up" data-aos-duration="800">Explore Now</a>-->
+</div>
+<div class="col-lg-6 col-12">
+<div class="text-center">
+<!--<a href="#" class="link-dark" data-bs-toggle="modal" data-bs-target="#videoModal"><i class="ri-play-fill display-2"></i></a>-->
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="pb-5">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="bg-white shadow p-5">
+<div class="row g-4 g-md-5">
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="500">
+<div class="text-center">
+<i class="ri-thumb-up-line ri-3x text-secondary"></i>
+<div class="pt-3">
+<h5 class="fw-bold pb-2">High Quality</h5>
+<p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="text-center">
+<i class="ri-truck-line ri-3x text-secondary"></i>
+<div class="pt-3">
+<h5 class="fw-bold pb-2">Fast Delivery</h5>
+<p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor.</p>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-12" data-aos="fade-up" data-aos-duration="700">
+<div class="text-center">
+<i class="ri-shield-check-line ri-3x text-secondary"></i>
+<div class="pt-3">
+<h5 class="fw-bold pb-2">Best Warranty</h5>
+<p class="text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elitsed do eiusmod tempor.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center">
+<h1 class="fw-bold pb-1 display-4" data-aos="fade-up" data-aos-duration="500">Categories</h1>
+<p class="text-muted mb-0" data-aos="fade-up" data-aos-duration="600">Check out latest updates</p>
+</div>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-6 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="bg-warning-subtle">
+<div class="row align-items-end">
+<div class="col-6">
+<div class="p-4">
+<small>24</small>
+<h4 class="fw-bold mb-0">Lamps</h4>
+</div>
+</div>
+<div class="col-6">
+<img src=" {% static 'img/category/lamp.png' %} " alt="lamp" class="img-fluid">
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-12" data-aos="fade-up" data-aos-duration="700">
+<div class="bg-warning-subtle">
+<div class="row align-items-end">
+<div class="col-6">
+<div class="p-4">
+<small>24</small>
+<h4 class="fw-bold mb-0">Armchairs</h4>
+</div>
+</div>
+<div class="col-6">
+<img src=" {% static 'img/category/single-sofa.png' %} " alt="single-sofa" class="img-fluid">
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-12" data-aos="fade-up" data-aos-duration="800">
+<div class="bg-warning-subtle">
+<div class="row align-items-end">
+<div class="col-6">
+<div class="p-4">
+<small>24</small>
+<h4 class="fw-bold mb-0">Tables</h4>
+</div>
+</div>
+<div class="col-6">
+<img src=" {% static 'img/category/table.png' %} " alt="table" class="img-fluid">
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-6 col-12" data-aos="fade-up" data-aos-duration="900">
+<div class="bg-warning-subtle">
+<div class="row align-items-end">
+<div class="col-6">
+<div class="p-4">
+<small>24</small>
+<h4 class="fw-bold mb-0">Sofas</h4>
+</div>
+</div>
+<div class="col-6">
+<img src=" {% static 'img/category/sofa.png' %} " alt="sofa" class="img-fluid">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center">
+<h1 class="fw-bold pb-1 display-4" data-aos="fade-up" data-aos-duration="500">Featured Products</h1>
+<p class="text-muted mb-0" data-aos="fade-up" data-aos-duration="600">Check out latest updates</p>
+</div>
+</div>
+</div>
+<div class="row g-5">
+ {% for i in allproducts%}
+<div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="card bg-transparent border-0 rounded-0 text-center h-100">
+<a href="#" class="position-relative">
+<img src="{{i.image1.url}} " class="card-img-top rounded-0" alt="product"> <span class="badge text-bg-light p-2 rounded-0 position-absolute start-0 m-3"></span>
+</a>
+<div class="card-body">
+<div class="d-flex align-items-center justify-content-center gap-2 mb-2">
+<i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i> <i class="ri-star-fill text-warning"></i>
+<i class="ri-star-fill text-warning-emphasis"></i>
+</div>
+<h5 class="card-title">{{i.name}}</h5>
+<p class="card-text">{{i.price}}</p>
+</div>
+<div class="card-footer bg-transparent border-0">
+{%if request.session.log_id%}
+ <a href="/ecommerce-single/{{ i.id }}" class="btn btn-secondary">Read more</a></div>
+ {%else%}
+  <a href="/login" class="btn btn-secondary">Read more</a></div>
+ {%endif%}
+ {%if not is_seller%}
+ <div class="card-footer bg-transparent border-0">
+  {%if request.session.log_id%}
+ <a href="/addtowishlist/{{i.id}}" class="btn btn-secondary"> Add Wishlist</a></div>
+ {%else%}
+  <a href="/login" class="btn btn-secondary"> Add Wishlist</a></div>
+ {%endif%}
+ {%endif%}
+
+</div>
+</div>
+
+
+
+{%endfor%}
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="bg-warning-subtle">
+<div class="row align-items-center">
+<div class="col-lg-5 col-12" data-aos="fade-up" data-aos-duration="600">
+<img src=" {% static 'img/new-arrivals.png' %} " alt="new-collection" class="img-fluid d-block mx-auto">
+</div>
+<div class="col-lg-7 col-12">
+<div class="px-lg-5">
+<h6 class="text-secondary" data-aos="fade-up" data-aos-duration="600">Quality Craftsmanship</h6>
+<h1 class="fw-bold display-3" data-aos="fade-up" data-aos-duration="700">Explore Our Range of Premium Materials and Finishes</h1>
+<p class="lead mb-5" data-aos="fade-up" data-aos-duration="800">
+In consequat, quam id sodales hendrerit, eros mi leo, nec lacinia risus neque tristique augue. Proin tempus urna vel congue elementum.
+</p>
+<a href="#" class="btn btn-secondary btn-lg text-white" data-aos="fade-up" data-aos-duration="800">Explore Now</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row mb-5">
+<div class="col-12">
+<div class="text-center">
+<h1 class="fw-bold pb-1 display-4" data-aos="fade-up" data-aos-duration="500">Latest from Blog</h1>
+<p class="text-muted mb-0" data-aos="fade-up" data-aos-duration="600">The freshest and most exciting news</p>
+</div>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="600">
+<div class="card border-0 shadow-sm h-100 rounded-0">
+<a href="#"><img src=" {% static 'img/latest-blog/blog-1.jpg' %} " class="card-img-top rounded-0" alt="blog"></a>
+<div class="card-body p-4">
+<div class="d-flex align-items-center gap-2 mb-2"><a href="#" class="small">NEWS</a> <a href="#" class="small">USEFUL</a></div>
+<a href="#"> <h4 class="card-title fw-bold">How To Style A Console Table</h4> </a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="700">
+<div class="card border-0 shadow-sm h-100 rounded-0">
+<a href="#"><img src=" {% static 'img/latest-blog/blog-2.jpg' %} " class="card-img-top rounded-0" alt="blog"></a>
+<div class="card-body p-4">
+<div class="mb-2"><a href="#" class="small">USEFUL</a></div>
+<a href="#"> <h4 class="card-title fw-bold">The Yinki Ilori colour explosion</h4> </a>
+</div>
+</div>
+</div>
+<div class="col-lg-4 col-md-6 col-12" data-aos="fade-up" data-aos-duration="800">
+<div class="card border-0 shadow-sm h-100 rounded-0">
+<a href="#"><img src=" {% static 'img/latest-blog/blog-3.jpg' %} " class="card-img-top rounded-0" alt="blog"></a>
+<div class="card-body p-4">
+<div class="mb-2"><a href="#" class="small">NEWS</a></div>
+<a href="#"> <h4 class="card-title fw-bold">How To Style A Console Table</h4> </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="py-5">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="card text-bg-dark border-0 rounded-0">
+<img src=" {% static 'img/subscribe.jpg' %} " class="card-img rounded-0 opacity-50" alt="subscribe">
+<div class="card-img-overlay d-flex align-items-center py-5 m-5 w-50">
+<div>
+<h1 class="card-title fw-bold pb-1 display-4" data-aos="fade-up" data-aos-duration="500">Subscribe to Fresh Newsletter</h1>
+<p class="card-text lead mb-5" data-aos="fade-up" data-aos-duration="600">Proin eget tortor risus cras ultricies ligula sed magna dictum porta sed porttitor lectus nibh vamus suscipit tortor</p>
+<form class="d-flex gap-2 mt-4" role="search" data-aos="fade-up" data-aos-duration="700">
+<input class="form-control rounded-0 px-4 py-3 border-0" type="email" placeholder="Your email address" aria-label="Your email address"> <button class="btn btn-secondary px-4">Subscribe</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+{%endblock%}

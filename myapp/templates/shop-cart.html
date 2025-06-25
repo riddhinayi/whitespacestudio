@@ -1,0 +1,289 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+ h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* General Styles for Shopping Cart */
+.w3l-ecom-cart {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+.covers-main h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.shopping-cart {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.column-labels {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #888;
+}
+
+.column-labels label {
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Product Row Styling */
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.product:last-child {
+    border-bottom: none;
+}
+
+.product img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-details {
+    flex: 2;
+    padding: 0px 0px 0px 65px;
+    text-align: left;
+}
+
+.product-title a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+}
+
+.product-title a:hover {
+    color: #e74c3c;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.price1, .product-quantity, .product-removal {
+    font-size: 1.5rem;
+    text-align: left;
+    flex: 1;
+}
+
+.product-quantity {
+    width: 60px;
+}
+
+.product-removal .btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.product-removal .btn:hover {
+    background-color: #c0392b;
+}
+
+.total-price {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #333;
+}
+
+/* Checkout Button */
+.checkout {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #27ae60;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.checkout:hover {
+    background-color: #219150;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .column-labels, .product {
+        display: block;
+        text-align: left;
+    }
+
+    .product {
+        padding: 20px 0;
+    }
+
+    .product img {
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+    .product-details, .product-quantity, .price1, .product-removal {
+        text-align: left;
+        padding: 10px 0;
+    }
+
+    .total-price {
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+</style>
+
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">CART</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/addproduct">CART</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<section class="w3l-ecom-cart">
+    <div class="covers-main">
+        <div class="wrapper">
+            <h1>Shopping Cart</h1>
+            <div class="shopping-cart">
+                <div class="column-labels">
+                    <label class="product-image">Items</label>
+                    <label class="product-details">Product</label>
+                    <label class="price1">Price</label>
+                    <label class="product-quantity">Quantity</label>
+                    <label class="price1">Total</label>
+                    <label class="product-removal">Remove</label>
+                </div>
+                {% for item in cartdetails %}
+                <div class="product">
+                    <div class="product-image">
+                        <a href=""><img src="{{ item.product.image1.url }}" alt="" class="img-responsive"></a>
+                    </div>
+                    <div class="product-details">
+                        <div class="product-title"><a href="">{{ item.product.name }}</a></div>
+                        <p class="product-description">{{ item.product.desc }}</p>
+                    </div>
+                    <div class="price1">₹{{ item.product.price }}</div>
+                    <div class="product-quantity">
+                        {{ item.Quantity }}
+                    </div>
+                    <div class="price1">₹{{ item.total_price }}</div>
+                    <div>
+                        <a href="{% url 'removefromcart' item.id %}" class="btn bg-danger text-white">Remove</a>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="total-price">
+                    <h3>Total: ₹{{ total_price2 }}</h3>
+                </div>
+
+                <!-- Razorpay payment button -->
+                {% if cartdetails %}
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-primary">Pay Now</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Razorpay payment form -->
+
+        {% if razorpay_payment %}
+
+<form method="POST" action="{% url 'payment_status' %}">
+  {% csrf_token %}
+  <script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_VQhEfe2NCXbbwI"
+    data-amount="{{ razorpay_payment.amount }}"
+    data-currency="INR"
+    data-order_id="{{ razorpay_payment.order_id }}"
+    data-buttontext="Pay with Razorpay"
+    data-name="Arc"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="{{ razorpay_payment.name }}"
+    data-prefill.email="gaurav.kumar@example.com"
+    data-theme.color="#F37254"
+  ></script>
+
+  <input type="hidden" custom="Hidden Element" name="hidden" />
+</form>
+
+
+{% endif %}
+
+{%endblock%}

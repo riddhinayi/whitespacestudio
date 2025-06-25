@@ -1,0 +1,162 @@
+{%extends 'base.html'%}
+{%block main%}
+{%load static%}
+{%include 'messages.html'%}
+
+<style>
+
+h1.fw-Italic.display-2 {
+    font-family: "Audiowide", sans-serif;
+    font-size: 3.5rem;
+    font-style: italic;
+    font-weight: 400; /* Normal weight, not bold */
+    color: #2c3e50;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+
+h1.fw-Italic.display-2:hover {
+    transform: scale(1.05);
+}
+
+/* AOS Animation */
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Main Container Styling */
+.section.profile-section {
+    padding: 40px 0;
+}
+
+.profile-section .container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Section Styling */
+.profile-section .profile-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styling */
+.profile-section .content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.profile-section .content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-section .content .price .new {
+    font-size: 1.2rem;
+    color: #555;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.profile-section .shop-list-btn {
+    margin-top: 20px;
+}
+
+.profile-section .shop-list-btn .btn {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.profile-section .shop-list-btn .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-section .content {
+        text-align: center;
+    }
+
+    .profile-section .profile-image img {
+        margin-bottom: 20px;
+    }
+
+    .profile-section .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile-section .content .price .new {
+        font-size: 1rem;
+    }
+}
+
+</style>
+            <!-- #banner start -->
+<div class="container py-5 my-1">
+<div class="row align-items-center g-4">
+<div class="col-lg-12 col-12 text-center">
+<div class="text-center">
+<h1 class="fw-Italic display-2" data-aos="fade-up" data-aos-duration="500">SELLER DETAILS</h1>
+<nav aria-label="breadcrumb" class="d-flex justify-content-center">
+<ol class="breadcrumb" data-aos="fade-up" data-aos-duration="600">
+<li class="breadcrumb-item small"><a href="/" class="text-secondary">HOME </a></li> &nbsp;/&nbsp;<span><li class="breadcrumb-item small active" aria-current="page"><a
+        href="/showseller">ADD SELLER DETAILS</a></li>
+</span>
+</ol>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="section profile-section section-margin">
+    <div class="container my-5">
+        <div class="row align-items-center">
+            <!-- Profile Image on Left -->
+            <div class="col-md-4 col-sm-12">
+                <div class="profile-image">
+                    <img src="{{ sellerdetail.sellerprofile_image.url }}" alt="Clothing Image" class="img-fluid rounded shadow" />
+                </div>
+            </div>
+
+            <!-- User Details on Right -->
+            <div class="col-md-8 col-sm-12">
+                <div class="content">
+                    <h4 class="title">Name: {{ sellerdetail.user.name }}</h4>
+                    <h4 class="title">Address: {{ sellerdetail.address }}</h4>
+                    <h4 class="title">Shop name: {{ sellerdetail.shop_name }}</h4>
+                    <h4 class="title">Shop address: {{ sellerdetail.shop_address }}</h4>
+                    <h4 class="title"> Year of Experience : {{ sellerdetail.years_of_experience }}</h4>
+                    <h4 class="title"> specialization: {{ sellerdetail.specialization }}</h4>
+                    <h4 class="title"> rating: {{ sellerdetail.rating }}</h4>
+                    <h4 class="title"> availability: {{ sellerdetail.availability }}</h4>
+                    <br>
+                    <div class="shop-list-btn">
+                        <a href="/editsellerdetail" class="btn btn-primary btn-block">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
